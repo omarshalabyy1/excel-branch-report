@@ -1,0 +1,86 @@
+// 3. Measures
+//
+// First create the measures table: Home > Enter data, name the table _Measures, keep the
+// one empty column, Load. Then for each measure below: select _Measures, Home > New measure,
+// paste the measure (from its name to the end of its expression), press Enter, and set
+// the format string and display folder in the Measure tools ribbon and the Properties pane.
+// When all measures exist, hide the empty column; _Measures moves to the top of the field list.
+//
+// Each measure's comment says what it returns, its format string and its display folder.
+
+
+// ---------- Page 1: Weekly report (display folder: Sales report) ----------
+
+// Sales of the clean order lines in the current filter. Format: $#,0  Folder: Sales report
+Sales =
+SUM ( Sales[sales] )
+
+// Profit of the clean order lines. Format: $#,0  Folder: Sales report
+Profit =
+SUM ( Sales[profit] )
+
+// Profit as a share of sales. Format: 0.0%  Folder: Sales report
+Profit Margin % =
+VAR _Sales = [Sales]
+VAR _Profit = [Profit]
+RETURN
+    DIVIDE ( _Profit, _Sales )
+
+// Distinct order IDs (an order can have several lines). Format: #,0  Folder: Sales report
+Orders =
+DISTINCTCOUNT ( Sales[order_id] )
+
+// Clean order lines, one per product on an order. Format: #,0  Folder: Sales report
+Order Lines =
+COUNTROWS ( Sales )
+
+// Sales per order. Format: $#,0.00  Folder: Sales report
+Average Order Value =
+VAR _Sales = [Sales]
+VAR _Orders = [Orders]
+RETURN
+    DIVIDE ( _Sales, _Orders )
+
+
+// ---------- Page 2: Data quality (display folder: Data quality) ----------
+
+// Branch files read. Format: #,0  Folder: Data quality
+Branch Files =
+COUNTROWS ( Files )
+
+// Order lines read from the files (title and totals rows not counted). Format: #,0  Folder: Data quality
+Rows Read =
+SUM ( Files[rows_read] )
+
+// Rows that passed every rule and went into the clean table. Format: #,0  Folder: Data quality
+Clean Rows =
+SUM ( Files[clean_rows] )
+
+// Rows set aside, each with its reason: the errors caught. Format: #,0  Folder: Data quality
+Rows Set Aside =
+COUNTROWS ( 'Set Aside' )
+
+// Rows set aside because the same line was pasted twice. Format: #,0  Folder: Data quality
+Duplicate Lines =
+CALCULATE (
+    COUNTROWS ( 'Set Aside' ),
+    'Set Aside'[reason] = "duplicate of an earlier row"
+)
+
+// Rows set aside because they break one of the five rules. Format: #,0  Folder: Data quality
+Rule Breaks =
+VAR _SetAside = [Rows Set Aside]
+VAR _Duplicates = [Duplicate Lines]
+RETURN
+    _SetAside - _Duplicates
+
+// Share of the rows read that were set aside. Format: 0.0%  Folder: Data quality
+Error Rate % =
+VAR _SetAside = [Rows Set Aside]
+VAR _Read = [Rows Read]
+RETURN
+    DIVIDE ( _SetAside, _Read )
+
+// Totals rows at the bottom of the West files, skipped as layout (not errors). Format: #,0  Folder: Data quality
+Totals Rows Skipped =
+SUM ( Files[totals_rows_skipped] )

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" width="1000" height="230" role="img" aria-label="Branch Excel report: 192 branch Excel files, 10,089 rows, one clean table. 253 errors caught and set aside with the reason. Rebuilt in one click.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#10213A"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: "Segoe UI", -apple-system, Helvetica, Arial, sans-serif; }
+    .kicker { font-size: 15px; font-weight: 600; fill: #60A5FA; letter-spacing: 2px; }
+    .title { font-size: 40px; font-weight: 800; fill: #FFFFFF; }
+    .sub { font-size: 18px; fill: #CBD5E1; }
+    .num { font-size: 26px; font-weight: 800; fill: #FFFFFF; }
+    .lbl { font-size: 15px; fill: #94A3B8; }
+  </style>
+
+  <rect width="1000" height="230" rx="22" fill="url(#bg)"/>
+  <text x="50" y="58" class="kicker">PROJECT · BRANCH EXCEL REPORT</text>
+  <text x="50" y="108" class="title">Every branch file, one clean table</text>
+  <text x="50" y="142" class="sub">Messy monthly Excel files in. A trusted weekly report out, in one click.</text>
+
+  <!-- the four numbers -->
+  <g transform="translate(50,168)">
+    <text x="0" y="24" class="num">192</text><text x="58" y="23" class="lbl">branch files</text>
+    <text x="190" y="24" class="num">10,089</text><text x="290" y="23" class="lbl">rows read</text>
+    <text x="400" y="24" class="num">253</text><text x="456" y="23" class="lbl">errors caught</text>
+    <text x="590" y="24" class="num">1</text><text x="610" y="23" class="lbl">click to rebuild</text>
+  </g>
+
+  <!-- files stacking into one table -->
+  <g transform="translate(790,40)" fill="none" stroke-width="2">
+    <rect x="0" y="0" width="54" height="68" rx="6" stroke="#475569"/>
+    <rect x="12" y="12" width="54" height="68" rx="6" stroke="#64748B" fill="#0B1220"/>
+    <rect x="24" y="24" width="54" height="68" rx="6" stroke="#94A3B8" fill="#0B1220"/>
+    <path d="M34 44h34M34 56h34M34 68h22" stroke="#94A3B8"/>
+    <path d="M92 58h34" stroke="#60A5FA" stroke-dasharray="4 5"/>
+    <path d="M120 52l8 6-8 6" stroke="#60A5FA"/>
+    <rect x="136" y="18" width="34" height="80" rx="6" stroke="#3B82F6" fill="#3B82F6" fill-opacity="0.15"/>
+    <path d="M136 38h34M136 58h34M136 78h34" stroke="#3B82F6"/>
+  </g>
+</svg>

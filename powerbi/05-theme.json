@@ -1,0 +1,29 @@
+{
+  "name": "Branch Excel report",
+  "dataColors": ["#2563EB", "#0E1630", "#60A5FA", "#94A3B8", "#1E40AF", "#CBD5E1"],
+  "background": "#FFFFFF",
+  "foreground": "#0E1630",
+  "tableAccent": "#2563EB",
+  "good": "#2563EB",
+  "neutral": "#94A3B8",
+  "bad": "#0E1630",
+  "textClasses": {
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#0E1630" },
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 13, "color": "#0E1630" },
+    "header": { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#0E1630" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#475569" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "border": [{ "show": true, "color": { "solid": { "color": "#E2E8F0" } }, "radius": 8 }],
+        "dropShadow": [{ "show": false }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F8FAFC" } }, "transparency": 0 }]
+      }
+    }
+  }
+}
