@@ -4,6 +4,17 @@ Open Power BI Desktop, then **Home > Transform data** to open the Power Query ed
 
 Every query sets its column types with the `en-US` culture, so dates like `2016-01-03` and amounts like `261.96` read the same on any Windows language setting.
 
+| Query | Source | Columns | Renames | Load |
+|---|---|---|---|---|
+| `OutputFolder` | parameter (text) | none | none | no (parameter) |
+| `Sales` | `output/clean_sales.csv` | 15 | none: names stay as `run.py` writes them | yes |
+| `Set Aside` | `output/set_aside_rows.csv` | 17 | none | yes |
+| `Files` | `output/file_log.csv` | 7 | none | yes |
+| `Branch` | the `Files` query | 1 | none | yes |
+| `Date` | generated from `Sales[order_date]` | 5 | none | yes |
+
+Why no renames: the column names match the CSV headers and the checks SQL, so a refresh never breaks on a renamed column.
+
 ## OutputFolder (parameter)
 
 **Home > Manage parameters > New parameter**

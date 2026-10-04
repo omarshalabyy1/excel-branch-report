@@ -7,6 +7,8 @@
 // When all measures exist, hide the empty column; _Measures moves to the top of the field list.
 //
 // Each measure's comment says what it returns, its format string and its display folder.
+// Visuals use these measures only: no implicit sums dragged from columns. There are no
+// calculated columns or calculated tables.
 
 
 // ---------- Page 1: Weekly report (display folder: Sales report) ----------

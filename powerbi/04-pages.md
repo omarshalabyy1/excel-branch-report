@@ -4,6 +4,8 @@ Canvas: 16:9, 1280 × 720 (the default). Set each visual's position and size in 
 
 Rename the pages (double-click the tab) to **Weekly report** and **Data quality**.
 
+Number formats come from each measure's format string (`03-measures.dax`), so no visual needs its own format. On every card set **Format > Visual > Callout value > Display units: None**, so the card shows the full number (2,265,770, not 2.27M) as in `06-checks.md`. Chart axes keep Auto display units. Visuals are listed in build order; the `#` is used in `07-interactions.md`.
+
 ## Page 1: Weekly report
 
 The week's numbers by branch, from the one clean table.
@@ -23,7 +25,7 @@ The week's numbers by branch, from the one clean table.
 | 11 | Matrix | 24, 512, 820, 192 | Rows: `Date[Year]`, then `Date[Month]`; Columns: `Branch[branch]`; Values: `[Sales]` | Title "Monthly sales by branch". Row subtotals on, column subtotals on. Expand to the month level with the double-arrow icon if you want every month shown |
 | 12 | Clustered bar chart | 860, 512, 396, 192 | Y-axis: `Sales[category]`; X-axis: `[Sales]`, `[Profit]` | Title "Sales and profit by category". Sort by Sales, descending. Data labels on |
 
-**Interactions:** keep the default (every visual filters the others). Clicking a branch in visual 10 filters the cards, the weekly line and the matrix to that branch.
+**Interactions:** set them as in `07-interactions.md`. Clicking a branch in visual 10 filters the cards, the weekly line and the matrix to that branch.
 
 ## Page 2: Data quality
 
@@ -42,7 +44,7 @@ What each branch sent, and the list of rows to fix at the source.
 | 9 | Matrix | 440, 196, 816, 250 | Rows: `Set Aside[reason]`; Columns: `Branch[branch]`; Values: `[Rows Set Aside]` | Title "Reasons by branch". Row and column subtotals on. Conditional formatting > Background color on `Rows Set Aside`: gradient from white (lowest) to #2563EB (highest) |
 | 10 | Table | 24, 462, 1232, 242 | `Set Aside[file]`, `Set Aside[excel_row]`, `Set Aside[reason]`, `Set Aside[order_id]`, `Set Aside[order_date]`, `Set Aside[quantity]`, `Set Aside[sales]` | Title "Rows to fix at the source". Sort by file, then excel_row, ascending. Totals off |
 
-**Interactions:** keep the default. Clicking a reason in visual 8 filters the matrix and the table to that reason, so the table becomes the to-do list for one kind of mistake.
+**Interactions:** set them as in `07-interactions.md`. Clicking a reason in visual 8 filters the matrix and the table to that reason, so the table becomes the to-do list for one kind of mistake.
 
 ## Sync the Branch slicer
 
@@ -50,4 +52,4 @@ What each branch sent, and the list of rows to fix at the source.
 
 ## Not used
 
-No drill-through, bookmarks or tooltip pages: two pages and the default interactions answer both questions.
+No drill-through, bookmarks, buttons or tooltip pages, and no filters in the Filters pane (visual, page or report level): two pages, two slicers and the interactions in `07-interactions.md` answer both questions.
