@@ -35,7 +35,7 @@ One script, [`run.py`](run.py), does the week's work:
 
 ## The result
 
-| | |
+| Measure | Result |
 |---|---|
 | Branch files merged | 192 (4 branches, 48 months each) |
 | Rows read | 10,089 |
