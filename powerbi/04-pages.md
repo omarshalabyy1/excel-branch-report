@@ -41,7 +41,7 @@ What each branch sent, and the list of rows to fix at the source.
 | 6 | Card | 768, 84, 240, 96 | `[Rows Set Aside]` | Category label on. Rename on the visual to "Errors caught" |
 | 7 | Card | 1016, 84, 240, 96 | `[Error Rate %]` | Category label on |
 | 8 | Clustered bar chart | 24, 196, 400, 250 | Y-axis: `Set Aside[reason]`; X-axis: `[Rows Set Aside]` | Title "Rows set aside by reason". Sort by Rows Set Aside, descending. Data labels on |
-| 9 | Matrix | 440, 196, 816, 250 | Rows: `Set Aside[reason]`; Columns: `Branch[branch]`; Values: `[Rows Set Aside]` | Title "Reasons by branch". Row and column subtotals on. Conditional formatting > Background color on `Rows Set Aside`: gradient from white (lowest) to #2563EB (highest) |
+| 9 | Matrix | 440, 196, 816, 250 | Rows: `Set Aside[reason]`; Columns: `Branch[branch]`; Values: `[Rows Set Aside]` | Title "Reasons by branch". Row and column subtotals on. Conditional formatting > Background color on `Rows Set Aside`: gradient from white (lowest) to Theme colour 1 (highest) |
 | 10 | Table | 24, 462, 1232, 242 | `Set Aside[file]`, `Set Aside[excel_row]`, `Set Aside[reason]`, `Set Aside[order_id]`, `Set Aside[order_date]`, `Set Aside[quantity]`, `Set Aside[sales]` | Title "Rows to fix at the source". Sort by file, then excel_row, ascending. Totals off |
 
 **Interactions:** set them as in `07-interactions.md`. Clicking a reason in visual 8 filters the matrix and the table to that reason, so the table becomes the to-do list for one kind of mistake.

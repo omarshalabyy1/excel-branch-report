@@ -18,7 +18,7 @@ Everything below is copy and paste. **Start with [`08-build-checklist.md`](08-bu
 | [`07-interactions.md`](07-interactions.md) | Which visual filters which, per page |
 | [`08-build-checklist.md`](08-build-checklist.md) | The build, step by step |
 
-The theme uses the portfolio site's colours (navy `#0E1630`, blue `#2563EB`, soft grey page `#F4F6FB`), so every project report looks like one family. The site's font, Geist, is not in Power BI's font list, so the theme uses Segoe UI.
+The theme uses the portfolio site's colours (navy `#0E1630`, blue `#2563EB`, soft grey page `#F4F6FB`), so every project report looks like one family. The pages name colours by theme slot (Theme colour 1 is the blue), never by hex code. The site's font, Geist, is not in Power BI's font list, so the theme uses Segoe UI.
 
 Before you start, run `python run.py` once so `output/` is up to date. After a new week of branch files, run it again (or double-click `run.bat`) and press **Refresh** in Power BI: that is the one click.
 
