@@ -1,0 +1,28 @@
+column,as_sent,standard
+ship_mode,Std,Standard Class
+ship_mode,2nd class,Second Class
+ship_mode,1st class,First Class
+ship_mode,same day,Same Day
+segment,consumer,Consumer
+segment,corporate,Corporate
+segment,home office,Home Office
+category,furniture,Furniture
+category,office supplies,Office Supplies
+category,technology,Technology
+sub_category,accessories,Accessories
+sub_category,appliances,Appliances
+sub_category,art,Art
+sub_category,binders,Binders
+sub_category,bookcases,Bookcases
+sub_category,chairs,Chairs
+sub_category,copiers,Copiers
+sub_category,envelopes,Envelopes
+sub_category,fasteners,Fasteners
+sub_category,furnishings,Furnishings
+sub_category,labels,Labels
+sub_category,machines,Machines
+sub_category,paper,Paper
+sub_category,phones,Phones
+sub_category,storage,Storage
+sub_category,supplies,Supplies
+sub_category,tables,Tables

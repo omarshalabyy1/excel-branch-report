@@ -1,0 +1,254 @@
+file,excel_row,problem
+Central_2016-01.xlsx,8,date outside the file's month
+Central_2016-02.xlsx,12,amount not a number
+Central_2016-02.xlsx,16,missing order id
+Central_2016-05.xlsx,23,date outside the file's month
+Central_2016-05.xlsx,28,quantity missing or below 1
+Central_2016-07.xlsx,20,duplicate of an earlier row
+Central_2016-07.xlsx,30,duplicate of an earlier row
+Central_2016-12.xlsx,25,duplicate of an earlier row
+Central_2017-04.xlsx,28,duplicate of an earlier row
+Central_2017-05.xlsx,13,duplicate of an earlier row
+Central_2017-05.xlsx,31,quantity missing or below 1
+Central_2017-07.xlsx,33,quantity missing or below 1
+Central_2017-09.xlsx,28,date outside the file's month
+Central_2017-11.xlsx,72,date not readable
+Central_2017-11.xlsx,83,date outside the file's month
+Central_2017-12.xlsx,28,duplicate of an earlier row
+Central_2017-12.xlsx,45,date not readable
+Central_2018-01.xlsx,4,date outside the file's month
+Central_2018-01.xlsx,16,duplicate of an earlier row
+Central_2018-03.xlsx,39,date not readable
+Central_2018-04.xlsx,20,duplicate of an earlier row
+Central_2018-05.xlsx,46,amount not a number
+Central_2018-06.xlsx,31,date outside the file's month
+Central_2018-08.xlsx,8,missing order id
+Central_2018-08.xlsx,36,quantity missing or below 1
+Central_2018-09.xlsx,16,duplicate of an earlier row
+Central_2018-09.xlsx,96,duplicate of an earlier row
+Central_2018-10.xlsx,40,duplicate of an earlier row
+Central_2018-11.xlsx,72,missing order id
+Central_2018-12.xlsx,25,quantity missing or below 1
+Central_2018-12.xlsx,53,duplicate of an earlier row
+Central_2018-12.xlsx,65,duplicate of an earlier row
+Central_2019-01.xlsx,27,missing order id
+Central_2019-01.xlsx,34,date not readable
+Central_2019-02.xlsx,12,duplicate of an earlier row
+Central_2019-03.xlsx,22,amount not a number
+Central_2019-03.xlsx,38,duplicate of an earlier row
+Central_2019-03.xlsx,46,duplicate of an earlier row
+Central_2019-05.xlsx,13,date not readable
+Central_2019-05.xlsx,15,amount not a number
+Central_2019-05.xlsx,45,amount not a number
+Central_2019-06.xlsx,20,duplicate of an earlier row
+Central_2019-07.xlsx,3,date outside the file's month
+Central_2019-09.xlsx,10,duplicate of an earlier row
+Central_2019-09.xlsx,16,duplicate of an earlier row
+Central_2019-09.xlsx,58,date not readable
+Central_2019-09.xlsx,74,amount not a number
+Central_2019-09.xlsx,77,duplicate of an earlier row
+Central_2019-10.xlsx,29,duplicate of an earlier row
+Central_2019-11.xlsx,72,duplicate of an earlier row
+Central_2019-11.xlsx,102,quantity missing or below 1
+Central_2019-12.xlsx,29,duplicate of an earlier row
+Central_2019-12.xlsx,39,quantity missing or below 1
+Central_2019-12.xlsx,81,duplicate of an earlier row
+Central_2019-12.xlsx,99,date outside the file's month
+East_2016-03.xlsx,18,duplicate of an earlier row
+East_2016-04.xlsx,5,duplicate of an earlier row
+East_2016-07.xlsx,8,missing order id
+East_2016-07.xlsx,27,duplicate of an earlier row
+East_2016-08.xlsx,12,amount not a number
+East_2016-09.xlsx,64,duplicate of an earlier row
+East_2016-09.xlsx,71,missing order id
+East_2016-10.xlsx,5,duplicate of an earlier row
+East_2016-11.xlsx,43,date not readable
+East_2016-11.xlsx,51,duplicate of an earlier row
+East_2016-11.xlsx,90,duplicate of an earlier row
+East_2016-12.xlsx,8,missing order id
+East_2017-03.xlsx,30,missing order id
+East_2017-03.xlsx,32,duplicate of an earlier row
+East_2017-04.xlsx,26,amount not a number
+East_2017-04.xlsx,48,date outside the file's month
+East_2017-06.xlsx,12,date outside the file's month
+East_2017-07.xlsx,27,duplicate of an earlier row
+East_2017-07.xlsx,30,date not readable
+East_2017-07.xlsx,41,missing order id
+East_2017-08.xlsx,14,duplicate of an earlier row
+East_2017-09.xlsx,51,date outside the file's month
+East_2017-09.xlsx,63,date not readable
+East_2017-09.xlsx,75,amount not a number
+East_2017-09.xlsx,95,missing order id
+East_2017-09.xlsx,108,date outside the file's month
+East_2017-11.xlsx,67,quantity missing or below 1
+East_2017-11.xlsx,79,missing order id
+East_2017-11.xlsx,92,quantity missing or below 1
+East_2017-12.xlsx,17,duplicate of an earlier row
+East_2017-12.xlsx,31,amount not a number
+East_2017-12.xlsx,63,duplicate of an earlier row
+East_2018-01.xlsx,13,missing order id
+East_2018-05.xlsx,31,date outside the file's month
+East_2018-05.xlsx,60,missing order id
+East_2018-07.xlsx,51,duplicate of an earlier row
+East_2018-08.xlsx,23,duplicate of an earlier row
+East_2018-08.xlsx,24,date outside the file's month
+East_2018-08.xlsx,29,duplicate of an earlier row
+East_2018-08.xlsx,36,date outside the file's month
+East_2018-08.xlsx,48,quantity missing or below 1
+East_2018-10.xlsx,20,quantity missing or below 1
+East_2018-10.xlsx,21,date outside the file's month
+East_2018-10.xlsx,35,duplicate of an earlier row
+East_2018-11.xlsx,15,duplicate of an earlier row
+East_2018-11.xlsx,19,date not readable
+East_2018-11.xlsx,72,duplicate of an earlier row
+East_2018-11.xlsx,115,duplicate of an earlier row
+East_2018-12.xlsx,23,quantity missing or below 1
+East_2018-12.xlsx,33,duplicate of an earlier row
+East_2018-12.xlsx,38,amount not a number
+East_2018-12.xlsx,49,quantity missing or below 1
+East_2019-03.xlsx,4,date outside the file's month
+East_2019-03.xlsx,9,missing order id
+East_2019-03.xlsx,52,duplicate of an earlier row
+East_2019-05.xlsx,16,missing order id
+East_2019-06.xlsx,16,quantity missing or below 1
+East_2019-06.xlsx,55,duplicate of an earlier row
+East_2019-06.xlsx,57,duplicate of an earlier row
+East_2019-07.xlsx,50,duplicate of an earlier row
+East_2019-09.xlsx,40,quantity missing or below 1
+East_2019-09.xlsx,77,duplicate of an earlier row
+East_2019-09.xlsx,131,amount not a number
+East_2019-09.xlsx,149,missing order id
+East_2019-10.xlsx,4,duplicate of an earlier row
+East_2019-10.xlsx,38,duplicate of an earlier row
+East_2019-10.xlsx,86,date not readable
+East_2019-11.xlsx,81,duplicate of an earlier row
+East_2019-11.xlsx,131,date not readable
+East_2019-12.xlsx,41,duplicate of an earlier row
+East_2019-12.xlsx,85,date not readable
+East_2019-12.xlsx,94,duplicate of an earlier row
+East_2019-12.xlsx,131,duplicate of an earlier row
+East_2019-12.xlsx,138,duplicate of an earlier row
+South_2016-01.xlsx,5,amount not a number
+South_2016-04.xlsx,33,missing order id
+South_2016-05.xlsx,9,date not readable
+South_2016-06.xlsx,9,amount not a number
+South_2016-07.xlsx,11,date outside the file's month
+South_2016-09.xlsx,19,date outside the file's month
+South_2016-10.xlsx,17,amount not a number
+South_2016-11.xlsx,21,quantity missing or below 1
+South_2017-01.xlsx,4,amount not a number
+South_2017-03.xlsx,5,missing order id
+South_2017-03.xlsx,27,date outside the file's month
+South_2017-04.xlsx,19,duplicate of an earlier row
+South_2017-05.xlsx,6,duplicate of an earlier row
+South_2017-06.xlsx,11,date not readable
+South_2017-07.xlsx,18,amount not a number
+South_2017-08.xlsx,6,duplicate of an earlier row
+South_2017-09.xlsx,8,date outside the file's month
+South_2017-09.xlsx,39,date outside the file's month
+South_2017-11.xlsx,4,missing order id
+South_2017-11.xlsx,24,duplicate of an earlier row
+South_2017-12.xlsx,35,date not readable
+South_2017-12.xlsx,36,quantity missing or below 1
+South_2018-01.xlsx,17,date not readable
+South_2018-02.xlsx,7,date not readable
+South_2018-05.xlsx,41,duplicate of an earlier row
+South_2018-07.xlsx,26,amount not a number
+South_2018-07.xlsx,35,duplicate of an earlier row
+South_2018-08.xlsx,18,amount not a number
+South_2018-09.xlsx,57,amount not a number
+South_2018-12.xlsx,4,date outside the file's month
+South_2018-12.xlsx,8,date not readable
+South_2019-03.xlsx,8,duplicate of an earlier row
+South_2019-04.xlsx,16,duplicate of an earlier row
+South_2019-05.xlsx,3,quantity missing or below 1
+South_2019-05.xlsx,18,date not readable
+South_2019-08.xlsx,4,missing order id
+South_2019-09.xlsx,54,amount not a number
+South_2019-11.xlsx,20,quantity missing or below 1
+South_2019-12.xlsx,21,date outside the file's month
+South_2019-12.xlsx,38,date not readable
+West_2016-01.xlsx,20,duplicate of an earlier row
+West_2016-03.xlsx,26,duplicate of an earlier row
+West_2016-04.xlsx,45,missing order id
+West_2016-05.xlsx,29,duplicate of an earlier row
+West_2016-07.xlsx,15,duplicate of an earlier row
+West_2016-07.xlsx,17,duplicate of an earlier row
+West_2016-08.xlsx,61,amount not a number
+West_2016-10.xlsx,53,missing order id
+West_2016-11.xlsx,71,quantity missing or below 1
+West_2016-11.xlsx,74,date outside the file's month
+West_2016-12.xlsx,29,date not readable
+West_2016-12.xlsx,42,duplicate of an earlier row
+West_2017-02.xlsx,14,amount not a number
+West_2017-03.xlsx,13,date not readable
+West_2017-03.xlsx,17,quantity missing or below 1
+West_2017-03.xlsx,25,duplicate of an earlier row
+West_2017-06.xlsx,21,duplicate of an earlier row
+West_2017-07.xlsx,13,quantity missing or below 1
+West_2017-07.xlsx,32,date not readable
+West_2017-08.xlsx,21,duplicate of an earlier row
+West_2017-08.xlsx,57,duplicate of an earlier row
+West_2017-09.xlsx,12,missing order id
+West_2017-09.xlsx,31,duplicate of an earlier row
+West_2017-09.xlsx,40,duplicate of an earlier row
+West_2017-09.xlsx,78,missing order id
+West_2017-09.xlsx,88,quantity missing or below 1
+West_2017-10.xlsx,26,duplicate of an earlier row
+West_2017-11.xlsx,19,date not readable
+West_2017-11.xlsx,90,duplicate of an earlier row
+West_2017-12.xlsx,5,amount not a number
+West_2017-12.xlsx,18,date not readable
+West_2017-12.xlsx,79,duplicate of an earlier row
+West_2017-12.xlsx,122,amount not a number
+West_2018-01.xlsx,22,quantity missing or below 1
+West_2018-03.xlsx,23,date outside the file's month
+West_2018-03.xlsx,36,duplicate of an earlier row
+West_2018-04.xlsx,34,amount not a number
+West_2018-05.xlsx,7,date not readable
+West_2018-05.xlsx,24,amount not a number
+West_2018-05.xlsx,44,amount not a number
+West_2018-06.xlsx,35,duplicate of an earlier row
+West_2018-06.xlsx,50,duplicate of an earlier row
+West_2018-07.xlsx,22,duplicate of an earlier row
+West_2018-07.xlsx,46,amount not a number
+West_2018-08.xlsx,41,amount not a number
+West_2018-08.xlsx,52,amount not a number
+West_2018-09.xlsx,13,duplicate of an earlier row
+West_2018-09.xlsx,16,date outside the file's month
+West_2018-09.xlsx,93,quantity missing or below 1
+West_2018-09.xlsx,104,date outside the file's month
+West_2018-09.xlsx,111,duplicate of an earlier row
+West_2018-09.xlsx,122,duplicate of an earlier row
+West_2018-10.xlsx,46,duplicate of an earlier row
+West_2018-10.xlsx,51,missing order id
+West_2018-12.xlsx,13,duplicate of an earlier row
+West_2018-12.xlsx,120,quantity missing or below 1
+West_2018-12.xlsx,122,duplicate of an earlier row
+West_2018-12.xlsx,135,missing order id
+West_2019-01.xlsx,19,quantity missing or below 1
+West_2019-03.xlsx,13,amount not a number
+West_2019-03.xlsx,71,amount not a number
+West_2019-03.xlsx,78,duplicate of an earlier row
+West_2019-04.xlsx,48,quantity missing or below 1
+West_2019-04.xlsx,56,amount not a number
+West_2019-04.xlsx,60,duplicate of an earlier row
+West_2019-06.xlsx,9,amount not a number
+West_2019-06.xlsx,49,amount not a number
+West_2019-08.xlsx,31,date not readable
+West_2019-08.xlsx,51,missing order id
+West_2019-08.xlsx,72,duplicate of an earlier row
+West_2019-08.xlsx,79,duplicate of an earlier row
+West_2019-09.xlsx,19,duplicate of an earlier row
+West_2019-09.xlsx,36,missing order id
+West_2019-09.xlsx,63,date not readable
+West_2019-09.xlsx,71,date outside the file's month
+West_2019-09.xlsx,111,quantity missing or below 1
+West_2019-09.xlsx,161,quantity missing or below 1
+West_2019-10.xlsx,10,date not readable
+West_2019-10.xlsx,57,date not readable
+West_2019-11.xlsx,51,duplicate of an earlier row
+West_2019-11.xlsx,97,duplicate of an earlier row
+West_2019-12.xlsx,41,date outside the file's month
+West_2019-12.xlsx,108,missing order id
+West_2019-12.xlsx,140,amount not a number

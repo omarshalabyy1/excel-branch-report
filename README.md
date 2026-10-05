@@ -27,9 +27,9 @@ Every branch sends its own monthly Excel file in its own format. One puts a titl
 
 One script, [`run.py`](run.py), does the week's work:
 
-1. **Collect:** reads every file in `data/branches/`, finds the header row wherever it sits, and skips the title rows and the totals row.
-2. **Clean:** maps every branch's headers to one set of names (one dictionary), reads each branch's own date format, turns "$1,234.50" and "3 pcs" into numbers, and fixes capitals, extra spaces and ship-mode spellings.
-3. **Check:** five rules (missing order ID, date not readable, date outside the file's month, quantity missing or not above zero, amount not a number), then duplicates. A row that fails is set aside with its reason, its file and Excel row number, and its values exactly as the branch sent them, so it can be fixed at the source.
+1. **Collect:** reads every file in `data/input/`, finds the header row wherever it sits, and skips the title rows and the totals row.
+2. **Clean:** maps every branch's headers to one set of names, reads each branch's own date format (never guessed), turns "$1,234.50" and "3 pcs" into numbers, and fixes capitals, extra spaces and spellings from one mapping file.
+3. **Check:** five rules (missing order ID, date not readable, date outside the file's month, quantity missing or below 1, amount not a number), then duplicates. A row that fails is set aside with its reason, its file and Excel row number, and its values exactly as the branch sent them, so it can be fixed at the source.
 4. **Merge:** one clean table across all branches and months.
 5. **Report:** `output/weekly_report.xlsx` (Summary, Weekly sales, Set aside, Clean data sheets) and three CSV files that the Power BI report refreshes from.
 
@@ -44,7 +44,7 @@ One script, [`run.py`](run.py), does the week's work:
 | Report rebuilt in | under a minute, with one command |
 
 - **Nothing is dropped silently:** 10,089 rows read = 9,836 clean + 253 set aside. The 48 totals rows are layout, not orders, and are counted apart.
-- **Tested against a known answer:** the mistakes were planted on purpose and listed in [`data/planted_errors.csv`](data/planted_errors.csv). All 253 were caught at the right file, row and reason, and nothing else was set aside. Every clean row matches its source line exactly.
+- **Tested against a known answer:** the mistakes were planted on purpose and listed in [`data/input/planted_errors.csv`](data/input/planted_errors.csv). All 253 were caught at the right file, row and reason, and nothing else was set aside. Every clean row matches its source line exactly.
 - **It found a real problem too:** 225 order lines (47 products) in the source carry hidden non-breaking spaces in the product name, the kind that makes a VLOOKUP fail. The cleaner turns them into normal spaces.
 
 ![253 rows set aside, each with its reason](docs/errors-by-reason.png)
@@ -69,15 +69,18 @@ pip install -r requirements.txt
 python run.py
 ```
 
-On Windows you can double-click `run.bat` instead. Then open `analysis/analysis.ipynb` and run all cells to recompute every number and chart. The branch files are already in the repo; `python make_branch_files.py` makes them again from the source.
+On Windows you can double-click `run.bat` instead. Then open `analysis/analysis.ipynb` and run all cells to recompute every number and chart. The branch files are already in the repo; `python data/demo/make_branch_files.py` makes them again from the source.
+
+**New client? See [docs/new-client.md](docs/new-client.md).** Everything that changes per client is in `config/client.yaml` and `data/input/`.
 
 ```
 run.py                   the one click: read, clean, check, merge, report
 run.bat                  the same, as a double-click on Windows
-make_branch_files.py     makes the 192 branch files and plants the mistakes
-data/branches/           the branch files run.py reads
-data/planted_errors.csv  every mistake planted on purpose: the test's answer key
-data/source/             the orders the branch files were made from
+config/client.yaml       every client value: file names, columns, date formats, the rule, colours
+config.py                load_config(), the only reader of client values
+theme.py                 writes powerbi/05-theme.json from the client's colours
+data/input/              the branch files, the spelling map and the demo's answer key (columns: README there)
+data/demo/               demo only: the source orders and the script that made the branch files
 output/                  clean_sales.csv, set_aside_rows.csv, file_log.csv, weekly_report.xlsx
 analysis/analysis.ipynb  every number in this README, with the checks
 powerbi/                 the Power BI report, step by step
@@ -86,7 +89,7 @@ docs/                    the diagrams and charts in this README
 
 ## Data
 
-Tableau's Sample Superstore orders: 9,994 US order lines from 2016 to 2019, in `data/source/`. `make_branch_files.py` splits them into one file per region (West, East, Central, South) and month, gives each region its own template, and plants mistakes on purpose with a fixed random seed. One line that the source repeats exactly was removed first, so the only duplicates are the planted ones.
+Tableau's Sample Superstore orders: 9,994 US order lines from 2016 to 2019, in `data/demo/`. `data/demo/make_branch_files.py` splits them into one file per region (West, East, Central, South) and month, gives each region its own template, and plants mistakes on purpose with a fixed random seed. One line that the source repeats exactly was removed first, so the only duplicates are the planted ones.
 
 ---
 

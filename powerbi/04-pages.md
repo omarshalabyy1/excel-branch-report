@@ -4,7 +4,7 @@ Canvas: 16:9, 1280 × 720 (the default). Set each visual's position and size in 
 
 Rename the pages (double-click the tab) to **Weekly report** and **Data quality**.
 
-Number formats come from each measure's format string (`03-measures.dax`), so no visual needs its own format. On every card set **Format > Visual > Callout value > Display units: None**, so the card shows the full number (2,265,770, not 2.27M) as in `06-checks.md`. Chart axes keep Auto display units. Visuals are listed in build order; the `#` is used in `07-interactions.md`.
+Number formats come from each measure's format string (`03-measures.dax`), so no visual needs its own format. Amounts are in the client's currency (`client.currency` in `config/client.yaml`): on the Sales, Profit and Average Order Value cards, rename the field on the visual to add it, for example "Sales (USD)". On every card set **Format > Visual > Callout value > Display units: None**, so the card shows the full number (2,265,770, not 2.27M) as in `06-checks.md`. Chart axes keep Auto display units. Visuals are listed in build order; the `#` is used in `07-interactions.md`.
 
 ## Page 1: Weekly report
 

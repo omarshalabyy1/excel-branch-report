@@ -1,0 +1,45 @@
+# Everything a client changes. Read only through config.py (load_config).
+# A key exists here only if something reads it. There are no secrets, so there is no .env.
+
+client:
+  name: Sample retail chain          # notebook chart titles
+  currency: USD                      # the label printed with every amount (notebook, Power BI cards)
+
+inputs:                              # the branch files in data/input/ (columns: data/input/README.md)
+  file_name: '(?P<branch>.+)_(?P<month>\d{4}-\d{2})\.xlsx'   # a file's name: the branch, then the month as YYYY-MM
+  sheet: Sales                       # the sheet that holds the order lines, in every file
+  totals_row_label: Total            # a row whose order id starts with this (any case) is a totals row, skipped
+  value_map: value_map.csv           # the spellings to unify: column, as_sent, standard
+
+columns:                             # standard name: every header the branch files use for it
+  order_id: [Order ID, Order No]     # (matching ignores case, spaces, _ and -)
+  order_date: [Order Date, Date]
+  ship_mode: [Ship Mode, Shipping]
+  segment: [Segment, Customer Type]
+  city: [City]
+  state: [State]
+  product_id: [Product ID, SKU]
+  category: [Category]
+  sub_category: [Sub-Category, Subcategory]
+  product_name: [Product Name, Item]
+  quantity: [Quantity, Qty]
+  sales: [Sales, Amount]
+  profit: [Profit]
+
+date_formats:                        # branches that type dates as text, and the format (Python strptime codes);
+  East: "%d/%m/%Y"                   # a text date from any other branch is set aside as "date not readable"
+  South: "%b %d %Y"
+
+rules:
+  min_quantity: 1                    # a line with a smaller quantity (or none) is set aside
+
+report:
+  title: Branch Excel report         # the Power BI theme name
+  excel_file: weekly_report.xlsx     # the Excel report run.py writes to output/
+  colours:                           # the Power BI theme (python theme.py) and the notebook charts
+    data: ["#2563EB", "#0E1630", "#8DB0FF", "#4A5675", "#1D4FD7", "#C7D7FE"]   # 1st = main series
+    text: "#0E1630"
+    muted: "#4A5675"
+    page: "#F4F6FB"
+    line: "#E2E7F1"
+    danger: "#C2410C"

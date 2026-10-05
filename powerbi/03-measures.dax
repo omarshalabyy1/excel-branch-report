@@ -7,17 +7,18 @@
 // When all measures exist, hide the empty column; _Measures moves to the top of the field list.
 //
 // Each measure's comment says what it returns, its format string and its display folder.
+// Amounts are in the client's currency (client.currency in config/client.yaml); the card titles name it.
 // Visuals use these measures only: no implicit sums dragged from columns. There are no
 // calculated columns or calculated tables.
 
 
 // ---------- Page 1: Weekly report (display folder: Sales report) ----------
 
-// Sales of the clean order lines in the current filter. Format: $#,0  Folder: Sales report
+// Sales of the clean order lines in the current filter. Format: #,0  Folder: Sales report
 Sales =
 SUM ( Sales[sales] )
 
-// Profit of the clean order lines. Format: $#,0  Folder: Sales report
+// Profit of the clean order lines. Format: #,0  Folder: Sales report
 Profit =
 SUM ( Sales[profit] )
 
@@ -36,7 +37,7 @@ DISTINCTCOUNT ( Sales[order_id] )
 Order Lines =
 COUNTROWS ( Sales )
 
-// Sales per order. Format: $#,0.00  Folder: Sales report
+// Sales per order. Format: #,0.00  Folder: Sales report
 Average Order Value =
 VAR _Sales = [Sales]
 VAR _Orders = [Orders]

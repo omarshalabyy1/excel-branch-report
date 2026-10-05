@@ -1,16 +1,18 @@
 # 6. Checks: the numbers the report must show
 
+These are the demo run's numbers (amounts in USD). For a client, copy the numbers from their notebook run.
+
 Every number below comes from `analysis/analysis.ipynb` and is counted a second time with plain SQL in the notebook ("Check 3"). Check with no slicer selected unless a row says otherwise. If a card is off, the usual causes are a missing relationship, a wrong column type in Power Query, or a filter left on a slicer.
 
 ## Page 1: Weekly report (all years, all branches)
 
 | Card or total | Must show |
 |---|---|
-| Sales | $2,265,770 (exact: 2,265,769.78) |
-| Profit | $282,653 (exact: 282,653.43) |
+| Sales | 2,265,770 (exact: 2,265,769.78) |
+| Profit | 282,653 (exact: 282,653.43) |
 | Profit Margin % | 12.5% |
 | Orders | 4,971 |
-| Average Order Value | $455.80 |
+| Average Order Value | 455.80 |
 | Order Lines (not on a card) | 9,836 |
 
 **Sales by branch** (visual 10; click a branch and the cards must change to its row):
@@ -61,7 +63,7 @@ Rows Read = Clean Rows + Rows Set Aside: 10,089 = 9,836 + 253. Set aside = 157 r
 | amount not a number | 37 |
 | date not readable | 31 |
 | date outside the file's month | 30 |
-| quantity missing or not above zero | 30 |
+| quantity missing or below 1 | 30 |
 | missing order id | 29 |
 
 **Reasons by branch** (visual 9, column totals) and the cards with one branch selected:
