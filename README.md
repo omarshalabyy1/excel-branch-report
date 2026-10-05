@@ -71,7 +71,7 @@ python run.py
 
 On Windows you can double-click `run.bat` instead. Then open `analysis/analysis.ipynb` and run all cells to recompute every number and chart. The branch files are already in the repo; `python data/demo/make_branch_files.py` makes them again from the source.
 
-**New client? See [docs/new-client.md](docs/new-client.md).** Everything that changes per client is in `config/client.yaml` and `data/input/`.
+Everything that changes per client is in `config/client.yaml` and `data/input/`.
 
 ```
 run.py                   the one click: read, clean, check, merge, report

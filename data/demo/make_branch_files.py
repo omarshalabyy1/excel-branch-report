@@ -2,7 +2,7 @@
 
 Run once; the files are committed. Each branch sends its own template, and a seeded
 set of mistakes is planted and listed in data/input/planted_errors.csv, so run.py can be
-tested against a known answer. A client's own files replace all of this (docs/new-client.md).
+tested against a known answer. A client's own files replace all of this.
 """
 from pathlib import Path
 
