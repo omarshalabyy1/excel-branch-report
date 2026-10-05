@@ -33,7 +33,7 @@ Per client, file by file. Hours are an estimate.
 | `config/client.yaml` | `rules.min_quantity` | `2` | 0.25 |
 | Run `run.py`, `theme.py` and the notebook; go through the set-aside list with the client and fix the config | | | 1.25 |
 | | **Subtotal without Power BI** | | **4.5** |
-| `powerbi/` | build from `08-build-checklist.md`; in the Sales query list the client's columns; copy the notebook's numbers into `06-checks.md` | | 2.5 |
+| `powerbi/` | build from `08-build-checklist.md`; in the Sales query list the client's columns; fill `06-checks.md` from the notebook's report numbers and SQL recount | | 2.5 |
 | | **Total with Power BI** | | **7** |
 
 ## Custom, by offering
@@ -96,6 +96,7 @@ Template hours ÷ (template + configure + custom) hours, per offering:
 | Offering | Arithmetic | Share already done |
 |---|---|---|
 | 16. Merge many Excel files into one report | 16 ÷ (16 + 4.5 + 3.5) = 16 ÷ 24 | **67%** (66.7%) |
+| 16, as a Power Query workbook instead of Python | 16 ÷ (16 + 4.5 + 3.5 + 6) = 16 ÷ 30 | **53%** (53.3%) |
 | 15. Excel data cleanup | 16 ÷ (16 + 4.5 + 6) = 16 ÷ 26.5 | **60%** (60.4%) |
 | 18. One-click Excel report automation | 16 ÷ (16 + 4.5 + 8) = 16 ÷ 28.5 | **56%** (56.1%) |
 | 3. Spreadsheets to a real SQL database | 14.5 ÷ (14.5 + 4.5 + 11.5) = 14.5 ÷ 30.5 | **48%** (47.5%) |
@@ -152,7 +153,7 @@ config/client.yaml: date_formats names a branch with no file: giza
 data/input/value_map.csv: names column(s) that are not in columns: ship_mode
 ```
 
-The drill found one gap, now fixed: an unquoted `Inv #` in `columns` made the YAML invalid with a long traceback; `load_config()` now stops with the line above.
+The drill found two gaps, both fixed: an unquoted `Inv #` in `columns` made the YAML invalid with a long traceback (`load_config()` now stops with the line above), and the weekly sales chart printed every value from 500 to 1,499 as "1k" (the axis now shows full numbers).
 
 **Nothing hard-coded:** this search over `run.py`, `config.py`, `theme.py`, `run.bat`, `powerbi/03-measures.dax`, the Power Query M code in `powerbi/01-power-query.md` and the notebook's code cells finds nothing:
 
