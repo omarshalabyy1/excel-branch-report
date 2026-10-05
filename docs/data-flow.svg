@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 432" width="1000" height="432" role="img" aria-label="Data flow, step by step: 192 branch workbooks (4 branches, 48 months each, sheet Sales) and the spelling map value_map.csv go into run.py. Collect reads 10,089 order lines and skips 48 totals rows; Clean puts headers, dates, amounts and spellings to one standard; Check passes 9,836 rows and sets aside 253: 157 that break a rule and 96 lines pasted twice. Merge writes clean_sales.csv (9,836 rows), set_aside_rows.csv (253 rows) and file_log.csv (192 rows, one per workbook). Report writes weekly_report.xlsx with four sheets, and the Power BI report refreshes its Weekly report and Data quality pages from the three CSV files.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#10213A"/>
+      <stop offset="1" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64748B"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: "Segoe UI", -apple-system, Helvetica, Arial, sans-serif; }
+    .title { font-size: 21px; font-weight: 700; fill: #FFFFFF; }
+    .sub { font-size: 13.5px; fill: #CBD5E1; }
+    .layer { font-size: 14px; font-weight: 700; fill: #0B1220; }
+    .where { font-size: 12px; fill: #94A3B8; }
+    .name { font-size: 13px; fill: #F1F5F9; }
+    .count { font-size: 11.5px; fill: #94A3B8; }
+    .note { font-size: 12px; fill: #CBD5E1; }
+    .col { font-size: 12.5px; fill: #E2E8F0; }
+    .key { font-size: 11px; font-weight: 700; }
+    .edge { fill: none; stroke: #64748B; stroke-width: 1.4; }
+  </style>
+  <rect width="1000" height="432" rx="22" fill="url(#bg)"/>
+  <text x="40" y="50" class="title">Data flow, step by step</text>
+  <text x="40" y="74" class="sub">Every file run.py reads and writes, and the rows at each step. One command: python run.py.</text>
+  <rect x="30" y="96" width="145" height="26" rx="13" fill="#94A3B8"/><text x="102.5" y="114" class="layer" text-anchor="middle">Input files</text>
+  <text x="102.5" y="138" class="where" text-anchor="middle">data/input</text>
+  <rect x="198" y="96" width="120" height="26" rx="13" fill="#3B82F6"/><text x="258.0" y="114" class="layer" text-anchor="middle">1  Collect</text>
+  <text x="258.0" y="138" class="where" text-anchor="middle">read_branch_file()</text>
+  <rect x="341" y="96" width="125" height="26" rx="13" fill="#0EA5E9"/><text x="403.5" y="114" class="layer" text-anchor="middle">2  Clean</text>
+  <text x="403.5" y="138" class="where" text-anchor="middle">clean()</text>
+  <rect x="489" y="96" width="125" height="26" rx="13" fill="#0EA5E9"/><text x="551.5" y="114" class="layer" text-anchor="middle">3  Check</text>
+  <text x="551.5" y="138" class="where" text-anchor="middle">check()</text>
+  <rect x="637" y="96" width="160" height="26" rx="13" fill="#14B8A6"/><text x="717.0" y="114" class="layer" text-anchor="middle">4  Merge</text>
+  <text x="717.0" y="138" class="where" text-anchor="middle">output/, CSV</text>
+  <rect x="830" y="96" width="142" height="26" rx="13" fill="#22C55E"/><text x="901.0" y="114" class="layer" text-anchor="middle">5  Report</text>
+  <text x="901.0" y="138" class="where" text-anchor="middle">Excel + Power BI</text>
+  <rect x="30" y="150" width="145" height="40" rx="7" fill="#13233D" stroke="#94A3B8" stroke-opacity="0.7"/><text x="40" y="167" class="name">value_map.csv</text><text x="40" y="183" class="count">spelling map</text>
+  <rect x="30" y="202" width="145" height="144" rx="10" fill="#13233D" stroke="#94A3B8" stroke-opacity="0.7"/>
+  <text x="44" y="232" class="name" font-weight="700">192 branch</text>
+  <text x="44" y="252" class="name" font-weight="700">workbooks</text>
+  <text x="44" y="272" class="note"></text>
+  <text x="44" y="292" class="note">sheet Sales</text>
+  <text x="44" y="312" class="note">4 branches,</text>
+  <text x="44" y="332" class="note">48 months each</text>
+  <rect x="198" y="202" width="120" height="40" rx="7" fill="#13233D" stroke="#3B82F6" stroke-opacity="0.7"/><text x="208" y="219" class="name">order lines</text><text x="208" y="235" class="count">10,089 rows</text>
+  <rect x="198" y="306" width="120" height="40" rx="7" fill="#13233D" stroke="#3B82F6" stroke-opacity="0.7" stroke-dasharray="4 4"/><text x="208" y="323" class="name">totals rows</text><text x="208" y="339" class="count">48 skipped</text>
+  <path d="M175 222.0 C186.5 222.0 186.5 222.0 196 222.0" class="edge" marker-end="url(#arrow)"/>
+  <path d="M175 326.0 C186.5 326.0 186.5 326.0 196 326.0" class="edge" marker-end="url(#arrow)"/>
+  <rect x="341" y="150" width="125" height="144" rx="7" fill="#13233D" stroke="#0EA5E9" stroke-opacity="0.7"/>
+  <text x="351" y="172" class="name">one standard</text>
+  <text x="351" y="191" class="count">10,089 rows</text>
+  <text x="351" y="229" class="note">headers, dates,</text>
+  <text x="351" y="248" class="note">amounts, units,</text>
+  <text x="351" y="267" class="note">spellings</text>
+  <path d="M175 170.0 C258.0 170.0 258.0 170.0 339 170.0" class="edge" marker-end="url(#arrow)"/>
+  <path d="M318 222.0 C329.5 222.0 329.5 222.0 339 222.0" class="edge" marker-end="url(#arrow)"/>
+  <rect x="489" y="150" width="125" height="40" rx="7" fill="#13233D" stroke="#0EA5E9" stroke-opacity="0.7"/><text x="499" y="167" class="name">passed every rule</text><text x="499" y="183" class="count">9,836 rows</text>
+  <rect x="489" y="202" width="125" height="40" rx="7" fill="#13233D" stroke="#0EA5E9" stroke-opacity="0.7"/><text x="499" y="219" class="name">broke a rule</text><text x="499" y="235" class="count">157 rows</text>
+  <rect x="489" y="254" width="125" height="40" rx="7" fill="#13233D" stroke="#0EA5E9" stroke-opacity="0.7"/><text x="499" y="271" class="name">pasted twice</text><text x="499" y="287" class="count">96 rows</text>
+  <path d="M466 170.0 C477.5 170.0 477.5 170.0 487 170.0" class="edge" marker-end="url(#arrow)"/>
+  <path d="M466 222.0 C477.5 222.0 477.5 222.0 487 222.0" class="edge" marker-end="url(#arrow)"/>
+  <path d="M466 274.0 C477.5 274.0 477.5 274.0 487 274.0" class="edge" marker-end="url(#arrow)"/>
+  <rect x="637" y="150" width="160" height="40" rx="7" fill="#13233D" stroke="#14B8A6" stroke-opacity="0.7"/><text x="647" y="167" class="name">clean_sales.csv</text><text x="647" y="183" class="count">9,836 rows</text>
+  <rect x="637" y="228.0" width="160" height="40" rx="7" fill="#13233D" stroke="#14B8A6" stroke-opacity="0.7"/><text x="647" y="245.0" class="name">set_aside_rows.csv</text><text x="647" y="261.0" class="count">253 rows, with the reason</text>
+  <rect x="637" y="306" width="160" height="40" rx="7" fill="#13233D" stroke="#14B8A6" stroke-opacity="0.7"/><text x="647" y="323" class="name">file_log.csv</text><text x="647" y="339" class="count">192 rows, one per workbook</text>
+  <path d="M614 170.0 C625.5 170.0 625.5 170.0 635 170.0" class="edge" marker-end="url(#arrow)"/>
+  <path d="M614 222.0 C625.5 222.0 625.5 248.0 635 248.0" class="edge" marker-end="url(#arrow)"/>
+  <path d="M614 274.0 C625.5 274.0 625.5 248.0 635 248.0" class="edge" marker-end="url(#arrow)"/>
+  <line x1="318" y1="326.0" x2="635" y2="326.0" class="edge" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+  <text x="345" y="319.0" class="where">rows read, totals skipped, clean and set aside, per file</text>
+  <path d="M800 150 H810 V346 H800" class="edge" stroke="#14B8A6"/>
+  <line x1="810" y1="205.0" x2="828" y2="205.0" class="edge" stroke="#22C55E" marker-end="url(#arrow)"/>
+  <line x1="810" y1="323.0" x2="828" y2="323.0" class="edge" stroke="#22C55E" marker-end="url(#arrow)"/>
+  <rect x="830" y="150" width="142" height="110" rx="10" fill="#13233D" stroke="#22C55E" stroke-opacity="0.7"/>
+  <text x="840" y="171" class="name" font-weight="700">weekly_report.xlsx</text>
+  <text x="840" y="192" class="note">Summary</text>
+  <text x="840" y="211" class="note">Weekly sales</text>
+  <text x="840" y="230" class="note">Set aside</text>
+  <text x="840" y="249" class="note">Clean data</text>
+  <rect x="830" y="274" width="142" height="98" rx="10" fill="#13233D" stroke="#22C55E" stroke-opacity="0.7"/>
+  <text x="840" y="294" class="name" font-weight="700">Power BI</text>
+  <rect x="840" y="304" width="122" height="25" rx="12.5" fill="#166534"/><text x="901.0" y="321" class="name" text-anchor="middle">Weekly report</text>
+  <rect x="840" y="334" width="122" height="25" rx="12.5" fill="#166534"/><text x="901.0" y="351" class="name" text-anchor="middle">Data quality</text>
+  <text x="40" y="404" class="where">dashed: totals rows are layout, not orders. They are skipped and only counted in file_log.csv. Nothing is dropped silently: rows read = clean + set aside.</text>
+</svg>

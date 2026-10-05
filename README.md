@@ -99,6 +99,16 @@ powerbi/                 the Power BI report, step by step
 docs/                    the diagrams and charts in this README
 ```
 
+## 🏗️ For engineers
+
+Every file `run.py` reads and writes, and the rows at each step:
+
+![Data flow, step by step](docs/data-flow.svg)
+
+The five tables the Power BI report builds from the three CSV files:
+
+![The Power BI model](docs/data-model.svg)
+
 ## 🗂️ Data
 
 Tableau's Sample Superstore orders: 9,994 US order lines from 2016 to 2019, in `data/demo/`. `data/demo/make_branch_files.py` splits them into one file per region (West, East, Central, South) and month, gives each region its own template, and plants mistakes on purpose with a fixed random seed. One line that the source repeats exactly was removed first, so the only duplicates are the planted ones.
