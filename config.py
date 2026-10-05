@@ -18,7 +18,11 @@ REQUIRED_COLUMNS = ["order_id", "order_date", "quantity", "sales", "profit", "ca
 
 
 def load_config():
-    cfg = yaml.safe_load((ROOT / "config" / "client.yaml").read_text(encoding="utf-8"))
+    try:
+        cfg = yaml.safe_load((ROOT / "config" / "client.yaml").read_text(encoding="utf-8"))
+    except yaml.YAMLError as error:
+        line = error.problem_mark.line + 1 if getattr(error, "problem_mark", None) else "?"
+        raise SystemExit(f"config/client.yaml is not valid YAML near line {line} (quote a value with # or :)")
     for key in REQUIRED:
         node = cfg
         for part in key.split("."):

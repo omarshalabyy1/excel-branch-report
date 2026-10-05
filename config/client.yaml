@@ -11,7 +11,7 @@ inputs:                              # the branch files in data/input/ (columns:
   totals_row_label: Total            # a row whose order id starts with this (any case) is a totals row, skipped
   value_map: value_map.csv           # the spellings to unify: column, as_sent, standard
 
-columns:                             # standard name: every header the branch files use for it
+columns:                             # standard name: every header the branch files use for it (quote one with # or :)
   order_id: [Order ID, Order No]     # (matching ignores case, spaces, _ and -)
   order_date: [Order Date, Date]
   ship_mode: [Ship Mode, Shipping]
