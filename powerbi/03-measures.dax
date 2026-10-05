@@ -84,6 +84,6 @@ VAR _Read = [Rows Read]
 RETURN
     DIVIDE ( _SetAside, _Read )
 
-// Totals rows at the bottom of the West files, skipped as layout (not errors). Format: #,0  Folder: Data quality
+// Totals rows skipped as layout (inputs.totals_row_label), not errors. Format: #,0  Folder: Data quality
 Totals Rows Skipped =
 SUM ( Files[totals_rows_skipped] )
