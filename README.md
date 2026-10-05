@@ -3,6 +3,10 @@
 </p>
 
 <p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=2DD4BF&center=true&vCenter=true&width=760&lines=192+branch+files.+One+clean+table.;Read.+Check.+Merge.+Report.;253+errors+caught%2C+each+with+its+reason" alt="192 branch files. One clean table.">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10">
   <img src="https://img.shields.io/badge/pandas-2-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas 2">
   <img src="https://img.shields.io/badge/Excel-openpyxl-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Excel with openpyxl">
@@ -35,6 +39,10 @@ One script, [`run.py`](run.py), does the week's work:
 
 ## 📈 The result
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/221352987-68da234d-4d62-4e9d-9d7f-098dc657c2dc.gif" width="100" alt="Moving chart">
+</p>
+
 | Measure | Result |
 |---|---|
 | Branch files merged | 192 (4 branches, 48 months each) |
@@ -63,6 +71,10 @@ Every number here comes from [`analysis/analysis.ipynb`](analysis/analysis.ipynb
 - **Data quality:** files, rows read, clean rows, errors caught and error rate; rows set aside by reason and by branch; the list of rows to fix at the source.
 
 ## ▶️ Run it
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100" alt="Code">
+</p>
 
 ```bash
 pip install -r requirements.txt
@@ -94,3 +106,7 @@ Tableau's Sample Superstore orders: 9,994 US order lines from 2016 to 2019, in `
 ---
 
 Built by [Omar Shalaby](https://github.com/omarshalabyy1) · Python, pandas, Excel, Power BI
+
+<p align="center">
+  <img width="100%" src="docs/footer.svg" alt="Every branch file, one clean table, one click.">
+</p>
