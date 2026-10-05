@@ -15,7 +15,7 @@
 
 Every branch sends its own monthly Excel file in its own format. One puts a title block on top and a totals row at the bottom. One names its columns differently and types dates as text. One sends amounts as "$1,234.50" and categories in capitals. One writes "3 pcs" and "2nd class". So each week someone opens every file, copies, fixes and pastes before anyone sees a total, and the mistakes inside the files (a missing order ID, a date from next month, a line pasted twice) slip into the numbers without anyone noticing.
 
-## The solution
+## 🛠️ The solution
 
 <p align="center">
   <img width="100%" src="docs/how-it-works.svg" alt="How it works: 01 Collect, every branch's monthly Excel file in one folder; 02 Clean, headers, dates, amounts and spellings to one standard; 03 Check, five rules and duplicates, bad rows set aside with the reason; 04 Merge, one clean table across all branches and months; 05 Report, weekly Excel and Power BI report rebuilt in one click.">
@@ -33,7 +33,7 @@ One script, [`run.py`](run.py), does the week's work:
 4. **Merge:** one clean table across all branches and months.
 5. **Report:** `output/weekly_report.xlsx` (Summary, Weekly sales, Set aside, Clean data sheets) and three CSV files that the Power BI report refreshes from.
 
-## The result
+## 📈 The result
 
 | Measure | Result |
 |---|---|
@@ -55,14 +55,14 @@ One script, [`run.py`](run.py), does the week's work:
 
 Every number here comes from [`analysis/analysis.ipynb`](analysis/analysis.ipynb), which runs the pipeline, checks the result three ways (planted mistakes, source lines, SQL) and draws the charts.
 
-## Power BI report
+## 📊 Power BI report
 
 [`powerbi/`](powerbi/) builds a two-page report in Power BI Desktop step by step, ready to copy and paste: the Power Query code, the model, 14 DAX measures, every visual with its fields, the theme, and the numbers each page must show.
 
 - **Weekly report:** sales, profit, margin, orders and average order value; weekly sales by branch; monthly sales by branch; sales and profit by category.
 - **Data quality:** files, rows read, clean rows, errors caught and error rate; rows set aside by reason and by branch; the list of rows to fix at the source.
 
-## Run it
+## ▶️ Run it
 
 ```bash
 pip install -r requirements.txt
@@ -87,7 +87,7 @@ powerbi/                 the Power BI report, step by step
 docs/                    the diagrams and charts in this README
 ```
 
-## Data
+## 🗂️ Data
 
 Tableau's Sample Superstore orders: 9,994 US order lines from 2016 to 2019, in `data/demo/`. `data/demo/make_branch_files.py` splits them into one file per region (West, East, Central, South) and month, gives each region its own template, and plants mistakes on purpose with a fixed random seed. One line that the source repeats exactly was removed first, so the only duplicates are the planted ones.
 
