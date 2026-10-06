@@ -83,7 +83,7 @@
   </g>
 
   <!-- out: the set-aside list -->
-  <path d="M624 330C640 380 660 392 682 392" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#head)"/>
+  <path d="M624 330 V380 Q624 392 636 392 H687" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#head)"/>
   <rect x="690" y="320" width="270" height="140" rx="14" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="6 5"/>
   <text x="712" y="350" class="name">Set aside, with the reason</text>
   <text x="712" y="384" class="big">253 rows</text>
