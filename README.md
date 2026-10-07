@@ -13,6 +13,8 @@
   <img src="https://img.shields.io/badge/Power_BI-Report-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI report">
 </p>
 
+> 📖 **New to data?** [The project explained, from zero](docs/explained.md): every word, every number and the interview questions, in plain words.
+
 <h3 align="center">192 branch Excel files merged into one weekly report in one click:<br>10,089 rows read, 253 errors caught and set aside with the reason.</h3>
 
 ## The problem
