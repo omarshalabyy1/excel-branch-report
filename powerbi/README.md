@@ -5,6 +5,8 @@ The report reads the three files `run.py` writes to `output/` and answers two qu
 1. **Weekly report:** how much each branch sold and earned, week by week, from one trusted table.
 2. **Data quality:** how many rows each branch sent, how many were clean, and which rows were set aside and why, so each branch can fix them at the source.
 
+In the six layers, the model (`02-model.md`) is the Semantic layer, the measures (`03-measures.dax`) are the Analytical layer and the pages (`04-pages.md`) are the Reporting layer.
+
 Everything below is copy and paste. **Start with [`08-build-checklist.md`](08-build-checklist.md)**: 32 numbered steps from opening Power BI Desktop to the last screenshot, with a check number at each point. It points to the other files:
 
 | File | What it holds |

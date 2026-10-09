@@ -4,6 +4,10 @@ break a rule (with the reason), merge, and rebuild the weekly report.
     python run.py        (or double-click run.bat)
 
 Every client value comes from config/client.yaml through load_config().
+
+Layers: Bronze layer = read_branch_file() (values as received; set-aside rows keep them),
+Silver layer = clean(), Gold layer = check(), Analytical and Reporting layers = write_report().
+The Semantic layer is the Power BI model (powerbi/02-model.md).
 """
 import re
 import time
@@ -28,7 +32,8 @@ def stop(path, problem):
 
 
 def read_branch_file(path, cfg, headers):
-    """The order lines of one file under the standard column names, and its totals rows skipped."""
+    """Bronze layer: the order lines of one file, values as received under the standard column names,
+    and its totals rows skipped."""
     name = re.fullmatch(cfg["inputs"]["file_name"], path.name)
     if not name:
         stop(path, "the name does not match inputs.file_name in config/client.yaml")
@@ -73,7 +78,7 @@ def to_date(value, date_format):
 
 
 def clean(lines, cfg, value_map):
-    """Fix every value to one standard. A value that cannot be read becomes empty."""
+    """Silver layer: fix every value to one standard. A value that cannot be read becomes empty."""
     df = lines.copy()
     for col in [c for c in cfg["columns"] if c not in NUMBERS + ["order_date"]]:
         df[col] = (df[col].astype("string").str.strip().str.replace(r"\s+", " ", regex=True)
@@ -90,7 +95,7 @@ def clean(lines, cfg, value_map):
 
 
 def check(df, cfg):
-    """The reason each row is set aside, or "" when it passes every rule."""
+    """Gold layer: the reason each row is set aside, or "" when it passes every rule."""
     min_quantity = cfg["rules"]["min_quantity"]
     reason = np.select(
         [df["order_id"].isna(),
@@ -107,6 +112,7 @@ def check(df, cfg):
 
 
 def write_report(sales, aside, files, excel_file):
+    """Analytical layer (Summary, Weekly sales) and Reporting layer (the Excel workbook)."""
     summary = files.groupby("branch")[["rows_read", "clean_rows", "set_aside_rows"]].sum()
     summary.insert(0, "files", files.groupby("branch").size())
     summary["sales"] = sales.groupby("branch")["sales"].sum().round(2)

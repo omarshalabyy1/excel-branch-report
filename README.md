@@ -54,7 +54,7 @@ One script, [`run.py`](run.py), does the week's work:
 | Report rebuilt in | under a minute, with one command |
 
 - **Nothing is dropped silently:** 10,089 rows read = 9,836 clean + 253 set aside. The 48 totals rows are layout, not orders, and are counted apart.
-- **Tested against a known answer:** the mistakes were planted on purpose and listed in [`data/input/planted_errors.csv`](data/input/planted_errors.csv). All 253 were caught at the right file, row and reason, and nothing else was set aside. Every clean row matches its source line exactly.
+- **Checked against a known answer:** the mistakes were planted on purpose and listed in [`data/input/planted_errors.csv`](data/input/planted_errors.csv). All 253 were caught at the right file, row and reason, and nothing else was set aside. Every clean row matches its source line exactly.
 - **It found a real problem too:** 225 order lines (47 products) in the source carry hidden non-breaking spaces in the product name, the kind that makes a VLOOKUP fail. The cleaner turns them into normal spaces.
 
 ![253 rows set aside, each with its reason](docs/errors-by-reason.png)
@@ -103,13 +103,13 @@ docs/                    the diagrams and charts in this README
 
 ## 🏗️ For engineers
 
-Every file `run.py` reads and writes, and the rows at each step:
+Every file `run.py` reads and writes, and the rows in each of the six layers: Bronze layer (`read_branch_file()`, values as received), Silver layer (`clean()`), Gold layer (`check()`, which writes `clean_sales.csv` and the set-aside rows), Semantic layer (the Power BI model), Analytical layer (the Summary and Weekly sales tables, the DAX measures) and Reporting layer (the Excel workbook, the Power BI pages):
 
-![Data flow, step by step](docs/data-flow.svg)
+![Data flow through the six layers: Bronze, Silver, Gold, Semantic, Analytical, Reporting](docs/data-flow.svg)
 
-The five tables the Power BI report builds from the three CSV files:
+The Semantic layer is the Power BI model: a star of Sales, Branch and Date, plus the Set Aside and Files tables for the Data quality page:
 
-![The Power BI model](docs/data-model.svg)
+![The Semantic layer: the Power BI model](docs/data-model.svg)
 
 ## 🗂️ Data
 

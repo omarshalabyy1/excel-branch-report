@@ -47,6 +47,7 @@ Think of it like a post room. Letters arrive from four offices, each in its own 
 | **Regular expression** | A pattern for text. `inputs.file_name` is one: it reads the branch and the month (`YYYY-MM`) out of each file name. |
 | **Notebook** | `analysis/analysis.ipynb`, a file that mixes code, its output and notes. It runs the pipeline, checks the result and computes every number in the README. |
 | **Pipeline** | The steps the data goes through, in order: collect, clean, check, merge, report. |
+| **Layers** | The six stages every project of this kind is named by, in order. **Bronze layer**: rows as received (`read_branch_file()`). **Silver layer**: one standard (`clean()`). **Gold layer**: the rules (`check()`), which split the rows into `clean_sales.csv` and the set-aside rows. **Semantic layer**: the Power BI model, the star of `Sales`, `Branch` and `Date`. **Analytical layer**: totals and KPIs, the Summary and Weekly sales tables and the DAX measures. **Reporting layer**: the Excel workbook and the Power BI pages. |
 | **SQL, SQLite** | SQL is the language used to ask a database questions. SQLite is a small database that lives in memory. The notebook loads the three CSV files into it to count everything a second way. |
 | **Power BI** | Microsoft's tool for interactive reports and dashboards. |
 | **Power Query, M code** | The part of Power BI that loads and shapes data before the report uses it. Its formulas are written in a language called M. |
@@ -69,14 +70,14 @@ Run in this order (the commands are in the README's "Run it" section):
 |---|---|---|
 | 0 | `config/client.yaml`, `config.py` | Hold every setting. `config.py` is the only file that reads them, and stops with one line if a setting is missing. |
 | 0 | `data/demo/make_branch_files.py` | Demo only, run once. Splits the source orders (see Data in the README) into one file per branch and month, gives each branch its own layout, and plants mistakes with a fixed random seed. The 192 files it made are committed, so you do not need to run it. |
-| 1 | `run.py`: `read_branch_file()` | **Collect.** For each file: reads the branch and month from the name, opens the `Sales` sheet, finds the header row, maps each header to its standard name, skips title and totals rows, and notes each row's Excel row number. A broken file (wrong name, no `Sales` sheet, a missing column) stops the run with one line before anything is written. |
-| 2 | `run.py`: `clean()` | **Clean.** Trims spaces and double spaces, applies the spelling map, reads dates (a real Excel date as it is; a text date only with its branch's format, never guessed), turns "3 pcs" into 3 and "$1,234.50" into 1234.50. A value that cannot be read becomes empty. |
-| 3 | `run.py`: `check()` | **Check.** Gives each row its reason, or none if it passes. The five rules, in this order: missing order id; date not readable; date outside the file's month; quantity missing or below 1; amount not a number. Then: a row that passed but is identical to an earlier row of the same branch is a "duplicate of an earlier row". |
-| 4 | `run.py`: `main()` | **Merge.** Rows with no reason go into one clean table. Set-aside rows keep the values the branch sent. For every file it checks rows read = clean + set aside, and stops if not. |
-| 5 | `run.py`: `write_report()` | **Report.** Writes `output/clean_sales.csv`, `output/set_aside_rows.csv`, `output/file_log.csv` (one row per file) and `output/weekly_report.xlsx` with four sheets: Summary, Weekly sales, Set aside, Clean data. Weeks run Monday to Sunday. |
+| 1 | `run.py`: `read_branch_file()` | **Collect (Bronze layer).** For each file: reads the branch and month from the name, opens the `Sales` sheet, finds the header row, maps each header to its standard name, skips title and totals rows, and notes each row's Excel row number. A broken file (wrong name, no `Sales` sheet, a missing column) stops the run with one line before anything is written. |
+| 2 | `run.py`: `clean()` | **Clean (Silver layer).** Trims spaces and double spaces, applies the spelling map, reads dates (a real Excel date as it is; a text date only with its branch's format, never guessed), turns "3 pcs" into 3 and "$1,234.50" into 1234.50. A value that cannot be read becomes empty. |
+| 3 | `run.py`: `check()` | **Check (Gold layer).** Gives each row its reason, or none if it passes. The five rules, in this order: missing order id; date not readable; date outside the file's month; quantity missing or below 1; amount not a number. Then: a row that passed but is identical to an earlier row of the same branch is a "duplicate of an earlier row". |
+| 4 | `run.py`: `main()` | **Merge (Gold layer).** Rows with no reason go into one clean table. Set-aside rows keep the values the branch sent. For every file it checks rows read = clean + set aside, and stops if not. |
+| 5 | `run.py`: `write_report()` | **Report (Analytical and Reporting layers).** Writes `output/clean_sales.csv`, `output/set_aside_rows.csv`, `output/file_log.csv` (one row per file) and `output/weekly_report.xlsx` with four sheets: Summary, Weekly sales, Set aside, Clean data. Weeks run Monday to Sunday. The Summary and Weekly sales sheets are the Analytical layer; the workbook is the Reporting layer. |
 | 6 | `theme.py` | Writes the Power BI theme `powerbi/05-theme.json` from the colours in `client.yaml`. |
 | 7 | `analysis/analysis.ipynb` | Runs `run.py`, checks the result three ways (the answer key, the source lines, SQL), computes every number in the README and draws the three charts in `docs/`. |
-| 8 | `powerbi/` | Step-by-step instructions to build the Power BI report from the three CSV files: queries, model, 14 measures, two pages, and the numbers each card must show (`06-checks.md`). |
+| 8 | `powerbi/` | The Semantic layer (the model), the Analytical layer (the measures) and the Reporting layer (the pages). Step-by-step instructions to build the Power BI report from the three CSV files: queries, model, 14 measures, two pages, and the numbers each card must show (`06-checks.md`). |
 
 The inputs, all in `data/input/`: the 192 branch files, `value_map.csv` (the spelling map) and `planted_errors.csv` (the demo's answer key, read only by the notebook).
 
@@ -155,11 +156,11 @@ The README does not print these, but the Power BI cards must show them (`powerbi
 | **5 rules + duplicates** | mental-model.svg | The five rules in section 3, then the duplicate check. |
 | **9,836 rows; 253 rows** | mental-model.svg | The clean table and the set-aside list. |
 | **96, 37, 31, 30, 30, 29** | mental-model.svg | The six reasons, short names: pasted twice, amount not a number, bad date (date not readable), wrong month, qty ≤ 0 (quantity missing or below 1), no ID. |
-| **1 to 5** | data-flow.svg | The five steps. The first three name the function in `run.py` that does them. |
+| **Six layers** | data-flow.svg | Bronze, Silver, Gold, Semantic, Analytical and Reporting layer, left to right. Under each, the function or tool that does it. `file_log.csv` sits in a grey strip: it is the run log, not a layer. |
 | **10,089 rows, 48 skipped** | data-flow.svg | Order lines read; totals rows skipped and only counted in `file_log.csv`. |
-| **9,836 / 157 / 96 rows** | data-flow.svg | Passed every rule / broke a rule / pasted twice. |
+| **9,836 / 253 (157 + 96) rows** | data-flow.svg | Passed every rule / set aside: broke a rule plus pasted twice. |
 | **192 rows, one per workbook** | data-flow.svg | `file_log.csv` has one row per branch file. |
-| **9,836 rows** | data-model.svg | The `Sales` fact table. |
+| **9,836 rows** | data-model.svg | The `Sales` fact table. The picture is the Semantic layer. |
 | **253 rows** | data-model.svg | The `Set Aside` table. Its key is `file` + `excel_row`. |
 | **192 rows** | data-model.svg | The `Files` table, one row per branch file. |
 | **4 rows** | data-model.svg | The `Branch` table: one row per branch. |
@@ -178,6 +179,9 @@ Things that can look wrong but are not:
 - **2.5% for South too.** South's error rate is 40 / 1,628 = 2.457%, which rounds to 2.5%. The overall 2.5% is 253 / 10,089.
 - **4,971 orders but 9,836 order lines.** One order can hold several products, each on its own line.
 - **The Date table runs 1 Jan 2016 to 31 Dec 2019, the orders 3 Jan 2016 to 30 Dec 2019.** The table covers whole years on purpose, so no day is missing.
+- **The Excel report has no Semantic layer step.** pandas sums `clean_sales.csv` straight into the Summary and Weekly sales sheets, and the Set aside and Clean data sheets copy the Gold layer's two files. Only Power BI has a model. At 10 thousand rows a model would add nothing to the workbook.
+- **The set-aside rows sit in the Gold layer, not the Bronze layer.** Their values are the ones the branch sent (Bronze), but it is `check()` that picks them, so the file is written after the rules run.
+- **The Power BI `Date` table takes its first and last year from `Sales`.** Only the range; every day in between is generated. `Branch` is built from `Files`, the run log.
 - **The last week's sales are only 713.79.** The week starting Monday 30 Dec 2019 has one day of data (`powerbi/06-checks.md`).
 
 ## 5. What the results mean for the business
