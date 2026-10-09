@@ -1,30 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" width="1000" height="230" role="img" aria-label="Branch Excel report: 192 branch Excel files, 10,089 rows, one clean table. 253 errors caught and set aside with the reason. Rebuilt in one click.">
   <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#10213A"/>
+    </linearGradient>
       <radialGradient id="jrGlowA" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.08"/>
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.4"/>
       <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="jrGlowB" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#14B8A6" stop-opacity="0.08"/>
+      <stop offset="0" stop-color="#14B8A6" stop-opacity="0.3"/>
       <stop offset="1" stop-color="#14B8A6" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <style>
     text { font-family: "Segoe UI", -apple-system, Helvetica, Arial, sans-serif; }
-    .kicker { font-size: 15px; font-weight: 600; fill: #1D4ED8; letter-spacing: 2px; }
-    .title { font-size: 40px; font-weight: 800; fill: #0E1630; }
-    .sub { font-size: 18px; fill: #475569; }
-    .num { font-size: 26px; font-weight: 800; fill: #0E1630; }
-    .lbl { font-size: 15px; fill: #506078; }
+    .kicker { font-size: 15px; font-weight: 600; fill: #60A5FA; letter-spacing: 2px; }
+    .title { font-size: 40px; font-weight: 800; fill: #FFFFFF; }
+    .sub { font-size: 18px; fill: #CBD5E1; }
+    .num { font-size: 26px; font-weight: 800; fill: #FFFFFF; }
+    .lbl { font-size: 15px; fill: #94A3B8; }
       .wave { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 2 10; animation: flow 6s linear infinite; }
     @keyframes flow { to { stroke-dashoffset: -120; } }
   </style>
 
-  <rect x="1" y="1" width="998" height="228" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect width="1000" height="230" rx="22" fill="url(#bg)"/>
   <circle cx="880" cy="60" r="190" fill="url(#jrGlowA)"/>
   <circle cx="160" cy="210" r="170" fill="url(#jrGlowB)"/>
-  <path class="wave" stroke="#14B8A6" stroke-opacity="0.5" d="M24 219 C 200 214, 330 223, 500 219 S 800 215, 976 219"/>
-  <path class="wave" stroke="#8B5CF6" stroke-opacity="0.4" style="animation-duration:9s" d="M40 225 C 220 221, 360 228, 520 225 S 820 222, 960 225"/>
+  <path class="wave" stroke="#2DD4BF" stroke-opacity="0.5" d="M24 219 C 200 214, 330 223, 500 219 S 800 215, 976 219"/>
+  <path class="wave" stroke="#A78BFA" stroke-opacity="0.4" style="animation-duration:9s" d="M40 225 C 220 221, 360 228, 520 225 S 820 222, 960 225"/>
 
   <text x="50" y="58" class="kicker">PROJECT · BRANCH EXCEL REPORT</text>
   <text x="50" y="108" class="title">Every branch file, one clean table</text>
@@ -41,11 +45,11 @@
   <!-- files stacking into one table -->
   <g transform="translate(790,40)" fill="none" stroke-width="2">
     <rect x="0" y="0" width="54" height="68" rx="6" stroke="#475569"/>
-    <rect x="12" y="12" width="54" height="68" rx="6" stroke="#64748B" fill="#F8FAFC"/>
-    <rect x="24" y="24" width="54" height="68" rx="6" stroke="#94A3B8" fill="#F8FAFC"/>
+    <rect x="12" y="12" width="54" height="68" rx="6" stroke="#64748B" fill="#0B1220"/>
+    <rect x="24" y="24" width="54" height="68" rx="6" stroke="#94A3B8" fill="#0B1220"/>
     <path d="M34 44h34M34 56h34M34 68h22" stroke="#94A3B8"/>
-    <path d="M92 58h34" stroke="#2563EB" stroke-dasharray="4 5"/>
-    <path d="M120 52l8 6-8 6" stroke="#2563EB"/>
+    <path d="M92 58h34" stroke="#60A5FA" stroke-dasharray="4 5"/>
+    <path d="M120 52l8 6-8 6" stroke="#60A5FA"/>
     <rect x="136" y="18" width="34" height="80" rx="6" stroke="#3B82F6" fill="#3B82F6" fill-opacity="0.15"/>
     <path d="M136 38h34M136 58h34M136 78h34" stroke="#3B82F6"/>
   </g>
