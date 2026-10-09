@@ -117,12 +117,12 @@ in
 
 ## Date (loads)
 
-One row per day, from the first of January of the first order year to the 31st of December of the last. Weeks start on Monday, the same as the Python report.
+One row per day, from `report.date_start` to `report.date_end` in `config/client.yaml` (2016-01-01 to 2019-12-31 in the demo). The range is fixed, never read from Sales, so the Date table is not built from the fact; when the config dates change, type the same two dates here. `run.py` stops if a clean order date falls outside them. Weeks start on Monday, the same as the Python report.
 
 ```m
 let
-    FirstDay = Date.StartOfYear(List.Min(Sales[order_date])),
-    LastDay = Date.EndOfYear(List.Max(Sales[order_date])),
+    FirstDay = #date(2016, 1, 1),
+    LastDay = #date(2019, 12, 31),
     Dates = List.Dates(FirstDay, Duration.Days(LastDay - FirstDay) + 1, #duration(1, 0, 0, 0)),
     AsTable = Table.FromList(Dates, Splitter.SplitByNothing(), {"Date"}),
     Typed = Table.TransformColumnTypes(AsTable, {{"Date", type date}}),

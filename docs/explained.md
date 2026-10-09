@@ -181,7 +181,7 @@ Things that can look wrong but are not:
 - **The Date table runs 1 Jan 2016 to 31 Dec 2019, the orders 3 Jan 2016 to 30 Dec 2019.** The table covers whole years on purpose, so no day is missing.
 - **The Excel report has no Semantic layer step.** pandas sums `clean_sales.csv` straight into the Summary and Weekly sales sheets, and the Set aside and Clean data sheets copy the Gold layer's two files. Only Power BI has a model. At 10 thousand rows a model would add nothing to the workbook.
 - **The set-aside rows sit in the Gold layer, not the Bronze layer.** Their values are the ones the branch sent (Bronze), but it is `check()` that picks them, so the file is written after the rules run.
-- **The Power BI `Date` table takes its first and last year from `Sales`.** Only the range; every day in between is generated. `Branch` is built from `Files`, the run log.
+- **The Power BI `Date` table's range is fixed in `config/client.yaml`** (`report.date_start` and `report.date_end`), never read from `Sales`, so no dimension is built from the fact. `run.py` stops if a clean order date falls outside it. `Branch` is built from `Files`, the run log.
 - **The last week's sales are only 713.79.** The week starting Monday 30 Dec 2019 has one day of data (`powerbi/06-checks.md`).
 
 ## 5. What the results mean for the business

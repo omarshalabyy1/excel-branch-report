@@ -1,17 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" role="img" aria-label="How it works: 01 Collect, every branch's monthly Excel file in one folder; 02 Clean, names, dates, amounts and spellings to one standard; 03 Check, rows that break a rule set aside with the reason; 04 Merge, one clean table across all branches and months; 05 Report, weekly Excel and Power BI report rebuilt in one click.">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B1220"/>
-      <stop offset="1" stop-color="#10213A"/>
-    </linearGradient>
   </defs>
   <style>
     text { font-family: "Segoe UI", -apple-system, Helvetica, Arial, sans-serif; }
-    .title { font-size: 22px; font-weight: 700; fill: #FFFFFF; }
-    .sub { font-size: 15px; fill: #CBD5E1; }
-    .num { font-size: 14px; font-weight: 700; fill: #FFFFFF; }
-    .step { font-size: 18px; font-weight: 700; fill: #FFFFFF; }
-    .desc { font-size: 14px; fill: #94A3B8; }
+    .title { font-size: 22px; font-weight: 700; fill: #0E1630; }
+    .sub { font-size: 15px; fill: #475569; }
+    .num { font-size: 14px; font-weight: 700; fill: #0E1630; }
+    .step { font-size: 18px; font-weight: 700; fill: #0E1630; }
+    .desc { font-size: 14px; fill: #506078; }
     .cap { font-size: 13px; fill: #64748B; }
     .box { fill: #3B82F6; fill-opacity: 0.08; stroke: #3B82F6; stroke-opacity: 0.7; }
     .dot { fill: #3B82F6; fill-opacity: 0.35; }
@@ -19,7 +15,7 @@
     @keyframes flow { to { stroke-dashoffset: -20; } }
   </style>
 
-  <rect width="1000" height="300" rx="22" fill="url(#bg)"/>
+  <rect x="1" y="1" width="998" height="298" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
   <text x="40" y="50" class="title">How it works</text>
   <text x="40" y="76" class="sub">python run.py (or double-click run.bat), then Refresh in Power BI. Nothing is copied or pasted by hand.</text>
 

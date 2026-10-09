@@ -36,6 +36,8 @@ rules:
 report:
   title: Branch Excel report         # the Power BI theme name
   excel_file: weekly_report.xlsx     # the Excel report run.py writes to output/
+  date_start: 2016-01-01             # the Power BI Date table runs from this day (powerbi/01-power-query.md)
+  date_end: 2019-12-31               # to this day; run.py stops if a clean order date falls outside
   colours:                           # the Power BI theme (python theme.py) and the notebook charts
     data: ["#2563EB", "#0E1630", "#8DB0FF", "#4A5675", "#1D4FD7", "#C7D7FE"]   # 1st = main series
     text: "#0E1630"

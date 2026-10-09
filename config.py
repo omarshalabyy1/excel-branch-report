@@ -9,7 +9,7 @@ REQUIRED = [
     "client.name", "client.currency",
     "inputs.file_name", "inputs.sheet", "inputs.totals_row_label", "inputs.value_map",
     "columns", "date_formats", "rules.min_quantity",
-    "report.title", "report.excel_file",
+    "report.title", "report.excel_file", "report.date_start", "report.date_end",
     "report.colours.data", "report.colours.text", "report.colours.muted",
     "report.colours.page", "report.colours.line", "report.colours.danger",
 ]

@@ -176,6 +176,11 @@ def main():
     files["clean_rows"] = files["file"].map(sales.groupby("file").size()).fillna(0).astype(int)
     files["set_aside_rows"] = files["file"].map(aside.groupby("file").size()).fillna(0).astype(int)
     assert (files["rows_read"] == files["clean_rows"] + files["set_aside_rows"]).all()
+    first, last = pd.Timestamp(cfg["report"]["date_start"]), pd.Timestamp(cfg["report"]["date_end"])
+    outside = ~sales["order_date"].between(first, last)
+    if outside.any():
+        raise SystemExit(f"{outside.sum()} clean rows have an order date outside report.date_start to report.date_end "
+                         "in config/client.yaml, the Power BI Date table's range: widen it")
 
     OUT.mkdir(exist_ok=True)
     sales.to_csv(OUT / "clean_sales.csv", index=False, date_format="%Y-%m-%d")
